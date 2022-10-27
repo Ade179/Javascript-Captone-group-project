@@ -1,11 +1,10 @@
-const pop_up = document.querySelector('.pop-up');
+const popups = document.querySelector('.pop-up');
 const over = document.querySelector('.over');
-const overlay= document.getElementById('overlay');
-export const popup = (id,rockets)=>{
+const overlay = document.getElementById('overlay');
+const popup = (id, rockets) => {
+  const rocket = rockets.find((data) => data.id === id);
 
-    const rocket = rockets.find((data) => data.id === id);
-    
-    pop_up.innerHTML= `
+  popups.innerHTML = `
     <div class="titles">
     <img class="rocketimage" src="${rocket.image}" alt="rocket">
     <button class="close">&times;</button>
@@ -37,15 +36,17 @@ export const popup = (id,rockets)=>{
         <button type="button">comment</button>
     </form>
 </div>    
-    `
+    `;
 
-    pop_up.classList.toggle('active');
-    over.classList.toggle('active');
-    overlay.classList.toggle('active');
-    const close = document.querySelector('.close');
-          close.addEventListener("click", ()=>{
-            pop_up.classList.remove('active');
-            over.classList.remove('active');
-            overlay.classList.remove('active');
-          })
-}
+  popups.classList.toggle('active');
+  over.classList.toggle('active');
+  overlay.classList.toggle('active');
+  const close = document.querySelector('.close');
+  close.addEventListener('click', () => {
+    popups.classList.remove('active');
+    over.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+};
+
+export { popup as default };
