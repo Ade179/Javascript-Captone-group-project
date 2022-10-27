@@ -62,12 +62,16 @@ form {
 
 .input {
   padding: 15px 8px;
+  border: none;
 }
 
 button {
   width: fit-content;
   padding: 8px 15px;
+  color: rgb(10, 64, 85);
   border: none;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 .header {
