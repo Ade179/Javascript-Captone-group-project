@@ -8,7 +8,6 @@ const getTheApi = async () => {
        render(res.results)
        document.addEventListener('click', (e) => {
         const { id } = e.target;
-        console.log(id);
         if (e.target.matches('.comment')) {
           popup(id, res.results);
         }
