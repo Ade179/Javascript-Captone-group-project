@@ -103,12 +103,58 @@ svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
     font-family: sans-serif;
   }
 
-  .pop-up{
-    position: absolute;
-   inset: 0;
-  background-color: whitesmoke;
-  opacity: .7;
-  padding: 2%;
-  display: none;
-   
+  .pop-up {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: fixed;
+    width: 90%;
+    height: 87%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aqua;
+    border-radius: 16px;
+    padding: 24px;
+    overflow: scroll;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s ease-in-out;
+    z-index: 10;
+  }
+  
+  .pop-up::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .pop-up.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c1c7d0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .over.active {
+    pointer-events: all;
+    opacity: 0.6;
+  }
+
+  .close {
+    border: none;
+    background-color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  #overlay.active {
+    filter: blur(8px);
   }

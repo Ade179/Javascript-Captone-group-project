@@ -1,6 +1,8 @@
 const cardContainer = document.querySelector('.card-cont');
+
 const render = (data) =>{
     data.forEach(dat =>{
+    console.log(dat);
      const containment = document.createElement('div')
      containment.classList.add('containment')
         containment.innerHTML = `
@@ -11,15 +13,11 @@ const render = (data) =>{
              <div class="likes"></div>
          </div>
         <div class="buttons">
-         <button class="comment">Comments</button>
-         <button class="reservation">reservation</button>
+         <button id="${dat.id}" class="comment">Comments</button>
         </div>
      </div>
          `
-         cardContainer.appendChild(containment)
+         cardContainer.append(containment);
      })
      }
-     
-const comment = document.querySelectorAll('.comment')
-console.log(comment)
-   module.exports = render
+export {render as default} ;
