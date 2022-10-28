@@ -103,12 +103,3 @@ svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
     font-family: sans-serif;
   }
 
-  .pop-up{
-    position: absolute;
-   inset: 0;
-  background-color: whitesmoke;
-  opacity: .7;
-  padding: 2%;
-  display: none;
-   
-  }
