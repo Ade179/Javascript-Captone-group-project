@@ -33,14 +33,11 @@ const addcomment = async (link, id, user, comment) => {
   getcomments(url);
 };
 
-const getLikes = async (link, rockets, id) => {
-  const response = await fetch(link, { mode: 'no-cors' });
+const getLikes = async (link, id) => {
+  const response = await fetch(link);
   await response.json()
     .then((likeness) => {
-      // const likes = JSON.parse(likeness);
-      console.log(likeness);
       const likeId = `${id}like`;
-      console.log(likeId);
       const likeItem = document.getElementById(likeId);
       likeItem.replaceChildren();
       const liked = likeness.find((like) => like.item_id === id);
@@ -48,7 +45,7 @@ const getLikes = async (link, rockets, id) => {
     });
 };
 
-const addLikes = async (link, rockets, id) => {
+const addLikes = async (link, id) => {
   await fetch(link, {
     method: 'POST',
     body: JSON.stringify({
@@ -58,7 +55,7 @@ const addLikes = async (link, rockets, id) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
-  getLikes(link, rockets, id);
+  getLikes(link, id);
 };
 
 export { addLikes, getcomments, addcomment as default };

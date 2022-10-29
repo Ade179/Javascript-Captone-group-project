@@ -24,8 +24,7 @@ const getTheApi = async () => {
     if (e.target.matches('.comment')) {
       popup(id, res.results, appId);
     } else if (e.target.matches('.likeicon')) {
-      console.log('liked');
-      addLikes(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`, res.results, id);
+      addLikes(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`, id);
     }
   });
   counter.innerText = res.count;
