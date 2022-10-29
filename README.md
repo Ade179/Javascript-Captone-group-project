@@ -17,7 +17,7 @@ you can watch this [video](https://www.youtube.com/watch?v=AcUd-_Yjjqg) for furt
 - Es6 and webpack
 
 ## Live demo
-[live link](https://rugwizangoga.github.io/Todo-list/dist/)
+[live link](https://ade179.github.io/Javascript-Captone-group-project/dist/)
 
 ## Getting Started
 
