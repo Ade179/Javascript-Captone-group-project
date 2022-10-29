@@ -34,11 +34,13 @@ const addcomment = async (link, id, user, comment) => {
 };
 
 const getLikes = async (link, rockets, id) => {
-  const response = await fetch(link);
-  await response.text()
+  const response = await fetch(link, { mode: 'no-cors' });
+  await response.json()
     .then((likeness) => {
-      const likes = rockets.find((data) => data.id === id);
-      const likeId = `${likes.id}like`;
+      // const likes = JSON.parse(likeness);
+      console.log(likeness);
+      const likeId = `${id}like`;
+      console.log(likeId);
       const likeItem = document.getElementById(likeId);
       likeItem.replaceChildren();
       const liked = likeness.find((like) => like.item_id === id);
