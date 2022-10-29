@@ -4,7 +4,7 @@ const like = 'like';
 const render = (data) => {
   data.forEach((dat) => {
     const hearts = dat.id + heart;
-    const likes = dat.id + like;
+    const likes = hearts + like;
     const containment = document.createElement('div');
     containment.classList.add('containment');
     containment.innerHTML = `
