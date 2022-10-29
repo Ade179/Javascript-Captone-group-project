@@ -1,6 +1,4 @@
 const cardContainer = document.querySelector('.card-cont');
-const heart = 'heart';
-const like = 'like';
 const render = (data) => {
   data.forEach((dat) => {
     const hearts = dat.id + heart;
