@@ -203,3 +203,12 @@ svg:not(:root).svg-inline--fa {
 #overlay.active {
   filter: blur(8px);
 }
+
+#commentstable {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(212, 228, 241);
+  padding: 10px;
+  text-align: start;
+  gap: 20px;
+}
